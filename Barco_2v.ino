@@ -114,7 +114,19 @@ void loop()
             relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
             relays.SetRelay(2, SERIAL_RELAY_OFF, 1);
           }
-      
+           if (readString.indexOf("UpAncorar") > 0)
+          {
+             
+            relays.SetRelay(3, SERIAL_RELAY_ON, 1);
+            delay(2000); 
+
+           }
+            if (readString.indexOf("DownAncorar") > 0)
+          {
+             
+            relays.SetRelay(3, SERIAL_RELAY_OFF, 1);
+
+           }
         }
 
         if (c == '\n') {
