@@ -82,29 +82,39 @@ void loop()
           }
           break;
 
-    /*  if (readString.indexOf("Frente") > 0)
+      if (readString.indexOf("Frente") > 0)
           {
             Serial.println("client: Frente");
-            //relays.SetRelay(1, SERIAL_RELAY_ON, 1);
-            //relays.SetRelay(2, SERIAL_RELAY_ON, 1);
+            relays.SetRelay(1, SERIAL_RELAY_ON, 1);
+            relays.SetRelay(2, SERIAL_RELAY_ON, 1);
+            delay(3000); 
+         Serial.println("client: STOP");
+            relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
+            relays.SetRelay(2, SERIAL_RELAY_OFF, 1);
 
           }
           if (readString.indexOf("Esquerda") > 0)
           {
             Serial.println("client: Esquerda");
-           // relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
-            relays.SetRelay(1, SERIAL_RELAY_ON, 1);
-            delay(3000);
             relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
+            relays.SetRelay(2, SERIAL_RELAY_ON, 1);
+            delay(1000); 
+            Serial.println("client: STOP");
+            relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
+            relays.SetRelay(2, SERIAL_RELAY_OFF, 1);
+
           }
           if (readString.indexOf("Direita") > 0)
           {
-            relays.SetRelay(4, SERIAL_RELAY_ON, 1);
-            delay(3000);
-            relays.SetRelay(4, SERIAL_RELAY_OFF, 1);
             Serial.println("client: Direita");
+            relays.SetRelay(1, SERIAL_RELAY_ON, 1);
+            relays.SetRelay(2, SERIAL_RELAY_OFF, 1);
+            delay(1000); 
+            Serial.println("client: STOP");
+            relays.SetRelay(1, SERIAL_RELAY_OFF, 1);
+            relays.SetRelay(2, SERIAL_RELAY_OFF, 1);
           }
-         */ 
+      
         }
 
         if (c == '\n') {
